@@ -8,6 +8,7 @@ public class AbilitySystemTarget : TargetRules
 	public AbilitySystemTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.Add("AbilitySystem");
 	}
 }

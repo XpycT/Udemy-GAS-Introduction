@@ -7,7 +7,19 @@ public class AbilitySystem : ModuleRules
 	public AbilitySystem(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        CppStandard = CppStandardVersion.Cpp17;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "GameplayAbilities", "GameplayTags", "AIModule", "GameplayTasks"});
+		PublicDependencyModuleNames.AddRange(new string[]
+        {
+            "Core", 
+            "CoreUObject", 
+            "Engine",
+            "InputCore",
+            "HeadMountedDisplay",
+            "GameplayAbilities",
+            "GameplayTags",
+            "AIModule",
+            "GameplayTasks"
+        });
 	}
 }

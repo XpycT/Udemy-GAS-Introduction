@@ -13,7 +13,8 @@ enum class EAbilityCostType : uint8
 {
 	Health,
 	Mana,
-	Strength
+	Strength,
+	MAX
 };
 
 USTRUCT(BlueprintType)

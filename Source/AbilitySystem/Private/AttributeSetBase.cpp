@@ -17,7 +17,7 @@ UAttributeSetBase::UAttributeSetBase()
 
 void UAttributeSetBase::PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData& Data)
 {
-	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<UProperty>(
+	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<FProperty>(
 		StaticClass(),GET_MEMBER_NAME_CHECKED(UAttributeSetBase, Health)))
 	{
 		Health.SetCurrentValue(FMath::Clamp(Health.GetCurrentValue(), 0.f, MaxHealth.GetCurrentValue()));
@@ -40,7 +40,7 @@ void UAttributeSetBase::PostGameplayEffectExecute(const struct FGameplayEffectMo
 		}
 	}
 
-	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<UProperty>(
+	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<FProperty>(
 		StaticClass(), GET_MEMBER_NAME_CHECKED(UAttributeSetBase, Mana)))
 	{
 		Mana.SetCurrentValue(FMath::Clamp(Mana.GetCurrentValue(), 0.f, MaxMana.GetCurrentValue()));
@@ -48,7 +48,7 @@ void UAttributeSetBase::PostGameplayEffectExecute(const struct FGameplayEffectMo
 		OnManaChange.Broadcast(Mana.GetCurrentValue(), MaxMana.GetCurrentValue());
 	}
 
-	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<UProperty>(
+	if (Data.EvaluatedData.Attribute.GetUProperty() == FindFieldChecked<FProperty>(
 		StaticClass(), GET_MEMBER_NAME_CHECKED(UAttributeSetBase, Strength)))
 	{
 		Strength.SetCurrentValue(FMath::Clamp(Strength.GetCurrentValue(), 0.f, MaxStrength.GetCurrentValue()));

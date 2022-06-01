@@ -13,7 +13,7 @@ FGameplayAbilityInfo UGameplayAbilityBase::GetAbilityInfo()
 		float CoolDownDuration = 0;
 		CoolDownEffect->DurationMagnitude.GetStaticMagnitudeIfPossible(1, CoolDownDuration);
 		float Cost = 0;
-		EAbilityCostType CostType;
+		EAbilityCostType CostType = EAbilityCostType::MAX;
 		if (CostEffect->Modifiers.Num() > 0)
 		{
 			FGameplayModifierInfo EffectInfo = CostEffect->Modifiers[0];
